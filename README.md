@@ -5,7 +5,13 @@
 python3 -m venv nomo-env
 cd nomo-env
 . bin/activate
+
+# If you want to checkout via https:
 pip install -e git+https://github.com/guettli/nomo.git#egg=nomo
+
+# If you want to checkout via ssh:
+pip install -e git+ssh://git@github.com/guettli/nomo.git#egg=nomo
+
 ls src
  --> src/nomo contains the source code
  ```
