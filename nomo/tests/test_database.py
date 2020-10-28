@@ -2,7 +2,7 @@
 import os
 import unittest
 
-from nomo.database import validate_database_name, create_database
+from nomo.database import validate_database_name, create_database, drop_database
 
 os.environ['DJANGO_SETTINGS_MODULE'] = 'mysite.settings'
 import django
@@ -15,6 +15,8 @@ class Test(unittest.TestCase):
         validate_database_name('123-abc_ABC')
 
     def test_create_database(self):
-        create_database('testdatabase__should_get_deleted_automatically')
-
+        name = 'testdatabase__should_get_deleted_automatically'
+        drop_database(name)
+        create_database(name)
+        drop_database(name)
 
