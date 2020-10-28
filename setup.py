@@ -11,5 +11,6 @@ setup(name='nomo',
       packages=['nomo'],
       install_requires=[
             'Django>=3.1.2',
+            'psycopg2',
       ],
       )

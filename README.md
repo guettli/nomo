@@ -24,7 +24,10 @@ ls src
 
 Congratulations, now you have the needed source code installed.
 
-
+* Install PostgreSQL on your machine
+* Create database user with the same name as your normal (non-root) user: `foo@laptop> sudo -u postgres createuser --createdb --superuser $USER`
+* Create a database with the same name as your normal user: `foo@laptop> sudo -u postgres createdb --owner=$USER $USER`
+* Now you should be able to login to your database: `foo@laptop> psql`.. You should see something like "psql (12.4 ...)... foo=>"
 * Create database tables: `python manage.py migrate` (or in PyCharm "Run/migrate")
 * Create superuser: `python manage.py createsuperuser`
 * Run tests: `python manage.py test nomo` (if there is something wrong, please create an [issue](https://github.com/guettli/nomo/issues))
