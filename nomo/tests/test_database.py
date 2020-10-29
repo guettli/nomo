@@ -15,7 +15,7 @@ class Test(unittest.TestCase):
         validate_database_name('123-abc_ABC')
 
     def test_create_database(self):
-        name = 'testdatabase__should_get_deleted_automatically'
+        name = 'test_database__should_get_deleted_automatically'
         drop_database(name)
         create_database(name)
         drop_database(name)
